@@ -13,7 +13,7 @@ const DashboardPage = () => {
   })
 
   return (
-    <div className='flex flex-col mx-8 gap-4'>
+    <div className='flex flex-col gap-4'>
       <div className='bg-stone-700 px-4 text-white py-2 text-lg rounded-lg border-black border-2'>
         <button
           className='bg-red-600 px-2 font-bold rounded-lg'

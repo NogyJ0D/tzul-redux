@@ -15,6 +15,12 @@ const LoginPage = () => {
     navigate('/dashboard')
   }
 
+  const socialLogin = (url) => {
+    console.log(url)
+    // const response = axiosRequest(url, 'GET')
+    // console.log(response)
+  }
+
   return (
     <div className='mx-auto border-2 border-black text-center bg-stone-700 w-max p-4 rounded-lg text-white flex flex-col gap-4'>
       <h3 className='text-xl font-bold'>Iniciar sesión</h3>
@@ -36,19 +42,19 @@ const LoginPage = () => {
       <div className='border-t-2 border-t-sky-500 flex flex-col gap-4 items-center text-xl'>
         <h4 className='text-xl font-semibold'>Login with</h4>
         <button
-          onClick={() => window.alert('WIP')}
+          onClick={() => socialLogin('facebook')}
           className='border-2 rounded-lg w-40 flex items-center gap-2 px-2'
         >
           <TiSocialFacebook className='text-3xl' />Facebook
         </button>
         <button
-          onClick={() => window.alert('WIP')}
+          onClick={() => socialLogin('github')}
           className='border-2 rounded-lg w-40 flex items-center gap-2 px-2'
         >
           <TiSocialGithub className='text-3xl' />Github
         </button>
         <button
-          onClick={() => window.alert('WIP')}
+          onClick={() => socialLogin('google')}
           className='border-2 rounded-lg w-40 flex items-center gap-2 px-2'
         >
           <TiSocialGooglePlus className='text-3xl' />Google

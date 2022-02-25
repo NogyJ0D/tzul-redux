@@ -1,6 +1,10 @@
 const HomePage = () => {
   return (
-    <div>Nada por aquí</div>
+    <div className='flex flex-col gap-4'>
+      <p>
+        Nada por aquí
+      </p>
+    </div>
   )
 }
 
