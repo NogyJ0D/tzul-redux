@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom'
-// import { useEffect } from 'react'
-// import axiosRequest from './helpers/axiosRequest'
+import { useEffect } from 'react'
+import { useDispatch } from 'react-redux'
+import { login } from './features/user/userSlice'
 
 import Layout from './layouts/Layout'
 import HomePage from './pages/HomePage'
@@ -11,11 +12,17 @@ const App = () => {
   // Consultar el estado global:
   // const state = useSelector(state => state.user)
   // Actualizar el estado global:
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-  // useEffect(() => {
-  //   axiosRequest()
-  // }, [])
+  useEffect(() => {
+    window.fetch('http://localhost:4000/auth/validate', {
+      method: 'POST', credentials: 'include'
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.logged) return dispatch(login(data.user.username))
+      })
+  }, [])
 
   return (
     <Routes>

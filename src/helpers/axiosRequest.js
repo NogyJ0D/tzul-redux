@@ -1,17 +1,15 @@
 import axios from 'axios'
 
-export default async function axiosRequest (url, method, body) {
+export default async function axiosRequest (url, options, body) {
   return await axios({
     url,
-    method,
     data: body,
-    headers: { 'Content-Type': 'application/json' },
-    withCredentials: true
+    options
   })
     .then(res => { return res })
     .then(data => {
-      // console.log(data)
-      return data
+      console.log(data)
+      // return data
     })
     .catch(err => { return err })
 }
